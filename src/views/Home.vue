@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<Select 
+  :options="options"
+  @show="showContent"
+  />
+  <hr />
+ <div class="card center "> <strong>контент из селекта: </strong>{{content.name}}</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Select from '@/components/Select.vue'
+
+import {ref} from 'vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  setup(props) {
+    const options = ref([
+      {value: 'option 1', name: 'контент 1'},
+      {value: 'option 2', name: 'контент 2'},
+      {value: 'option 3', name: 'контент 3'},
+    ])
+    const content = ref({})
+
+    const showContent = (opt)=>{
+      return content.value = opt
+    }
+    return {
+      options, showContent, content
+    }
+  },
+  components: {Select}
 }
 </script>
