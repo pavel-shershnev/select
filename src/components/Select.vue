@@ -47,7 +47,7 @@ export default {
 
 <style scoped lang="scss">
 .card{
-    width: 30%;
+    // width: 30%;
     margin: 0;
     cursor: pointer;
 }

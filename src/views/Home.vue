@@ -1,10 +1,19 @@
 <template>
-<Select 
-  :options="options"
-  @show="showContent"
-  />
-  <hr />
- <div class="card center "> <strong>контент из селекта: </strong>{{content.name}}</div>
+
+<div class="cont" >
+ <div class="one">
+    <Select 
+    :options="options"
+    @show="showContent"
+    />
+ </div>
+  <!-- <hr /> -->
+ <div class="card two"> 
+   <strong>контент из селекта: </strong>
+   {{content.name}}
+ </div>
+</div>
+  
 </template>
 
 <script>
@@ -31,3 +40,18 @@ export default {
   components: {Select}
 }
 </script>
+
+<style scoped lang="scss">
+.cont {display: flex; height: 300px;}
+div
+
+.one {
+  width: 300px;
+  padding-right: 10pt;
+}
+.two {
+  width: 100%;
+}
+
+
+</style>
